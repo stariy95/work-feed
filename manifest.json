@@ -1,0 +1,41 @@
+{
+    "app": {
+        "background": {
+            "scripts": ["background.js","jquery-2.1.0.min.js"]
+        }
+    },
+
+    "manifest_version": 2,
+    "name": "Work Feed",
+    "version": "1.0",
+
+    "description": "A plain text description",
+    "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
+
+    "externally_connectable": {
+       "matches": ["*://*.example.com/*"]
+    },
+
+    "permissions": [
+        "http://*/",
+        "clipboardWrite",
+        "notifications",
+        {
+            "socket": ["tcp-connect:*:*"]
+        },
+        "storage"
+    ],
+
+    "offline_enabled": true,
+
+    "sockets": {
+
+        "tcp": {
+            "connect": "*"
+        },
+
+        "udp": {
+            "send": "*"
+        }
+    }
+}
