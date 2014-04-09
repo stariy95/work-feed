@@ -1,9 +1,17 @@
 function RssObj(data, tag) {
     this.tag = tag;
-    this.title = $(data).find("title").text();
+    this.title = $(data).find("title").first().text();
+    if(tag == 'crunch') {
+        console.log($(data).find("title"));
+        console.log($(data).find("title").text());
+    }
     this.date = Date.parse($(data).find("pubDate").text());
     this.link = $(data).find("link").text();
-    this.description = $(data).find("description").text();
+    try {
+        this.description = $("<div/>").html($(data).find("description").text()).text();
+    } catch(e) {
+        this.description = $(data).find("description").text();
+    }
 }
 
 

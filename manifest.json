@@ -23,7 +23,8 @@
         {
             "socket": ["tcp-connect:*:*"]
         },
-        "storage"
+        "storage",
+        "unlimitedStorage"
     ],
 
     "offline_enabled": true,
